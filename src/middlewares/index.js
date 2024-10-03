@@ -5,6 +5,8 @@ const Logger = require('../logger/discord.log.v2');
 
 
 const pustToLogDiscord = async (req, res, next) => {
+    console.log ('req.originalUrl', req.originalUrl);
+    if (req.originalUrl.includes('/v1/api/shop/login')) return next();
     try {
         Logger.sendToFormatCode(
             {

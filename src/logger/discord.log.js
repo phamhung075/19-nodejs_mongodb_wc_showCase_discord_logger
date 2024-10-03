@@ -1,6 +1,10 @@
 'use strict';
 
 const { Client, GatewayIntentBits } = require('discord.js');
+const {
+    CHANNELID_DISCORD,
+    TOKEN_DISCORD
+} = process.env;
 const client = new Client({ 
     intents: [
         GatewayIntentBits.DirectMessages,
@@ -14,8 +18,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-const token = "MTI5MTI4OTUwNDg2MjE3OTM1OA.GQnIAV.Klm0PQI-bI3ElNv0wcp5gvjElVLKR2wIRWKYH0"
-client.login(token);
+client.login(TOKEN_DISCORD);
 
 client.on('messageCreate', (message) => {
     if (message.author.bot) return;

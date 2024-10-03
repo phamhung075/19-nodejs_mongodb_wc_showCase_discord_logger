@@ -59,6 +59,8 @@ class DiscordLogger {
             console.error(`Channel with ID ${this.channelId} not found.`);
             return;
         }
+
+        // message use chatGPT api call
         channel.send(message).catch(e => console.log(e));
     }
 }

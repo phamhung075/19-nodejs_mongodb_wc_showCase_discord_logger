@@ -29,6 +29,7 @@ app.use(
 
 // init db
 require("./dbs/init.mongodb.js");
+require("./services/redis.service.js");
 
 //check connect
 const { countConnect } = require("./helpers/check.connect.js");
